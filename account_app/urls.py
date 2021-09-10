@@ -1,9 +1,9 @@
 from django.urls import path
 
-from account_app.views import hello_world
+from account_app.views import romeo
 
 app_name = "account_app"
 
 urlpatterns = [
-    path('hello_world/', hello_world, name='hello-world')
+    path('romeo/', romeo, name='romeo')
 ]
