@@ -1,7 +1,9 @@
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
+from django.urls import reverse
+
 from account_app.models import Romeo
 
 
@@ -15,7 +17,8 @@ def romeo(request):
         new_romeo.text = temp
         new_romeo.save()
 
-        return render(request, 'account_app/romeo.html', context={'romeo_output': new_romeo})
+        return HttpResponseRedirect(reverse('account_app:romeo'))
     else:
+        romeo_list = Romeo.objects.all()
         return render(request, 'account_app/romeo.html',
-                      context={'text': 'GET METHOD!!!'})
+                      context={'romeo_list': romeo_list})

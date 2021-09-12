@@ -18,10 +18,12 @@
 
         </form>
 
-        {% if romeo_output %}
-        <h1>
-            {{ romeo_output.text }}
-        </h1>
+        {% if romeo_list %}
+            {% for romeo in romeo_list %}
+            <h4>
+                {{ romeo.text }}
+            </h4>
+            {% endfor %}
         {% endif %}
 
     </div>
