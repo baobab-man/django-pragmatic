@@ -5,4 +5,9 @@ from django.shortcuts import render
 
 
 def romeo(request):
-    return render(request, 'account_app/romeo.html')
+
+    if request.method == "POST":
+        return render(request, 'account_app/romeo.html', context={'text': 'POST METHOD!!!'})
+    else:
+        return render(request, 'account_app/romeo.html',
+                      context={'text': 'GET METHOD!!!'})

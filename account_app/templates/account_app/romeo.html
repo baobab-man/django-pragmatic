@@ -6,6 +6,16 @@
         <h1>
             romeo
         </h1>
+
+        <form action="/account/romeo/" method="post">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="POST">
+        </form>
+
+        <h1>
+            {{ text }}
+        </h1>
+
     </div>
 
 {% endblock %}
